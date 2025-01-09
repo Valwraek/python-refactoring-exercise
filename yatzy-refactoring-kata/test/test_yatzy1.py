@@ -88,10 +88,13 @@ def test_sixes():
 
 
 def test_one_pair():
-    assert 6 == Yatzy().score_pair(3, 4, 3, 5, 6)
-    assert 10 == Yatzy().score_pair(5, 3, 3, 3, 5)
-    assert 12 == Yatzy().score_pair(5, 3, 6, 6, 5)
-
+    '''
+    1. The test no longer creates objects.
+    '''
+    assert 6 == Yatzy.one_pair(3, 4, 3, 5, 6)
+    assert 10 == Yatzy.one_pair(5, 3, 3, 3, 5)
+    assert 12 == Yatzy.one_pair(5, 3, 6, 6, 5)
+    assert 0 == Yatzy.one_pair(1, 2, 3, 4, 5)
 
 def test_two_Pair():
     assert 16 == Yatzy().two_pair(3, 3, 5, 4, 5)
