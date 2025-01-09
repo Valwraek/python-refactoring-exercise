@@ -44,8 +44,13 @@ def test_twos():
 
 
 def test_threes():
+    '''
+    1. Changed the name of the test to align it with the function that is tested.
+    2. Added a test case to test the function with the number 3.
+    '''
     assert 6 == Yatzy.threes(1, 2, 3, 2, 3)
     assert 12 == Yatzy.threes(2, 3, 3, 3, 3)
+    assert 0 == Yatzy.threes(1, 2, 2, 1, 5)
 
 
 def test_fours_test():
