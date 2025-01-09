@@ -29,19 +29,12 @@ class Yatzy:
         return dice.count(1)
 
     @staticmethod
-    def twos(d1, d2, d3, d4, d5):
-        sum = 0
-        if (d1 == 2):
-            sum += 2
-        if (d2 == 2):
-            sum += 2
-        if (d3 == 2):
-            sum += 2
-        if (d4 == 2):
-            sum += 2
-        if (d5 == 2):
-            sum += 2
-        return sum
+    def twos(*dice):
+        '''
+        1. The function can receive multiple parameters.
+        2. The method ".count()" to simplify an overly complex function.
+        '''
+        return dice.count(2) * 2
 
     @staticmethod
     def threes(d1, d2, d3, d4, d5):
