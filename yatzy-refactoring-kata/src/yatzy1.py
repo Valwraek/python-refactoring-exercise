@@ -37,27 +37,12 @@ class Yatzy:
         return dice.count(2) * 2
 
     @staticmethod
-    def threes(d1, d2, d3, d4, d5):
-        s = 0
-        if (d1 == 3):
-            s += 3
-        if (d2 == 3):
-            s += 3
-        if (d3 == 3):
-            s += 3
-        if (d4 == 3):
-            s += 3
-        if (d5 == 3):
-            s += 3
-        return s
-
-    def __init__(self, d1=0, d2=0, d3=0, d4=0, _5=0):
-        self.dice = [0] * 5
-        self.dice[0] = d1
-        self.dice[1] = d2
-        self.dice[2] = d3
-        self.dice[3] = d4
-        self.dice[4] = _5
+    def threes(*dice):
+        '''
+        1. The function can receive multiple parameters.
+        2. The method ".count()" to simplify an overly complex function.
+        '''
+        return dice.count(3) * 3
 
     def fours(self):
         sum = 0
