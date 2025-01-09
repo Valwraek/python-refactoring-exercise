@@ -32,9 +32,15 @@ def test_ones():
     assert 4 == Yatzy.ones(1, 2, 1, 1, 1)
 
 
-def test_2s():
+def test_twos():
+    '''
+    1. Changed the name of the test to align it with the function that is tested.
+    2. Added a test case to test the function with the number 2.
+    '''
     assert 4 == Yatzy.twos(1, 2, 3, 2, 6)
     assert 10 == Yatzy.twos(2, 2, 2, 2, 2)
+    assert 0 == Yatzy.twos(6, 1, 3, 4, 5)
+    
 
 
 def test_threes():
