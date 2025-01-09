@@ -44,12 +44,11 @@ class Yatzy:
         '''
         return dice.count(3) * 3
 
-    def fours(self):
-        sum = 0
-        for at in range(5):
-            if (self.dice[at] == 4):
-                sum += 4
-        return sum
+    def fours(*dice):
+        '''
+        1. Removed the use of objects.
+        '''
+        return dice.count(4) * 4
 
     def fives(self):
         s = 0
