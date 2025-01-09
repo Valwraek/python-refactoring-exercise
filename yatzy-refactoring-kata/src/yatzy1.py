@@ -46,17 +46,19 @@ class Yatzy:
 
     def fours(*dice):
         '''
-        1. Removed the use of objects.
+        1. Removed the use of objects
+        2. The function can receive multiple parameters.
+        3. The method ".count()" to simplify an overly complex function.
         '''
         return dice.count(4) * 4
 
-    def fives(self):
-        s = 0
-        i = 0
-        for i in range(len(self.dice)):
-            if (self.dice[i] == 5):
-                s = s + 5
-        return s
+    def fives(*dice):
+        '''
+        1. Removed the use of objects
+        2. The function can receive multiple parameters.
+        3. The method ".count()" to simplify an overly complex function.
+        '''
+        return dice.count(5) * 5
 
     def sixes(self):
         sum = 0
