@@ -14,16 +14,19 @@ def test_chance_scores_sum_of_all_dice():
 
 def test_yatzy_scores_50():
     '''
-    1. Refactored due to redundant variables
-    2. 
+    1. Refactored due to redundant variables.
     '''
     assert 50 == Yatzy.yatzy(4, 4, 4, 4, 4)
     assert 50 == Yatzy.yatzy(6, 6, 6, 6, 6)
     assert 0 == Yatzy.yatzy(6, 6, 6, 6, 3)
 
 
-def test_1s():
-    assert Yatzy.ones(1, 2, 3, 4, 5) == 1
+def test_ones():
+    '''
+    1. Changed the name of the test to align it with the function that is tested.
+    2. Moved the order of the first assert to have the same structure as the other tests.
+    '''
+    assert 1 == Yatzy.ones(1, 2, 3, 4, 5) 
     assert 2 == Yatzy.ones(1, 2, 1, 4, 5)
     assert 0 == Yatzy.ones(6, 2, 2, 4, 5)
     assert 4 == Yatzy.ones(1, 2, 1, 1, 1)
