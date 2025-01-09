@@ -53,10 +53,16 @@ def test_threes():
     assert 0 == Yatzy.threes(1, 2, 2, 1, 5)
 
 
-def test_fours_test():
-    assert 12 == Yatzy(4, 4, 4, 5, 5).fours()
-    assert 8 == Yatzy(4, 4, 5, 5, 5).fours()
-    assert 4 == Yatzy(4, 5, 5, 5, 5).fours()
+def test_fours():
+    '''
+    1. Changed the name of the test due to redundancy in it's naming.
+    2. The test no longer creates objects and behaves like the others.
+    '''
+    assert 12 == Yatzy.fours(4, 4, 4, 5, 5)
+    assert 8 == Yatzy.fours(4, 4, 5, 5, 5)
+    assert 4 == Yatzy.fours(4, 5, 5, 5, 5)
+    assert 0 == Yatzy.fours(1, 2, 2, 1, 5)
+    
 
 
 def test_fives():
