@@ -5,9 +5,10 @@ from src.yatzy1 import Yatzy
 # available from http://pytest.org/
 
 def test_chance_scores_sum_of_all_dice():
-    expected = 15
-    actual = Yatzy.chance(2, 3, 4, 5, 1)
-    assert expected == actual
+    '''
+    Refactored due to redundant variables
+    '''
+    assert 15 == Yatzy.chance(2, 3, 4, 5, 1)
     assert 16 == Yatzy.chance(3, 3, 4, 5, 1)
 
 
