@@ -60,12 +60,13 @@ class Yatzy:
         '''
         return dice.count(5) * 5
 
-    def sixes(self):
-        sum = 0
-        for at in range(len(self.dice)):
-            if (self.dice[at] == 6):
-                sum = sum + 6
-        return sum
+    def sixes(*dice):
+        '''
+        1. Removed the use of objects
+        2. The function can receive multiple parameters.
+        3. The method ".count()" to simplify an overly complex function.
+        '''
+        return dice.count(6) * 6
 
     def score_pair(self, d1, d2, d3, d4, d5):
         counts = [0] * 6
