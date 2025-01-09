@@ -67,8 +67,7 @@ def test_fours():
 
 def test_fives():
     '''
-    1. Changed the name of the test due to redundancy in it's naming.
-    2. The test no longer creates objects and behaves like the others.
+    1. The test no longer creates objects and behaves like the others.
     '''
     assert 10 == Yatzy.fives(4, 4, 4, 5, 5)
     assert 15 == Yatzy.fives(4, 4, 5, 5, 5)
@@ -76,10 +75,16 @@ def test_fives():
     assert 0 == Yatzy.fives(1, 2, 2, 1,6)
     
 
-def test_sixes_test():
-    assert 0 == Yatzy(4, 4, 4, 5, 5).sixes()
-    assert 6 == Yatzy(4, 4, 6, 5, 5).sixes()
-    assert 18 == Yatzy(6, 5, 6, 6, 5).sixes()
+def test_sixes():
+    '''
+    1. Changed the name of the test due to redundancy in it's naming.
+    2. The test no longer creates objects and behaves like the others.
+    '''
+    assert 0 == Yatzy.sixes(4, 4, 4, 5, 5)
+    assert 6 == Yatzy.sixes(4, 4, 6, 5, 5)
+    assert 18 == Yatzy.sixes(6, 5, 6, 6, 5)
+    assert 0 == Yatzy.fives(1, 2, 2, 1,4)
+    
 
 
 def test_one_pair():
