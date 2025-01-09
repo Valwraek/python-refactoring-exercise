@@ -1,22 +1,24 @@
 class Yatzy:
 
+    ZERO = 0
+    FIFTY = 50
+    
     @staticmethod
     def chance(*dice):
         '''
-        1. The function can receive multiple parameter.
+        1. The function can receive multiple parameters.
         2. Use sum() function to calculate the sum of the dice.  
         '''
         return sum(dice)
 
     @staticmethod
-    def yatzy(dice):
-        counts = [0] * (len(dice) + 1)
-        for die in dice:
-            counts[die - 1] += 1
-        for i in range(len(counts)):
-            if counts[i] == 5:
-                return 50
-        return 0
+    def yatzy(*dice):
+        '''
+        1. The function can receive multiple parameters.
+        2. The method ".count()" to simplify an overly complex function.
+        3. Used a ternary operator to further simplify the function.
+        '''
+        return Yatzy.FIFTY if dice.count(dice[0]) == 5 else Yatzy.ZERO
 
     @staticmethod
     def ones(d1, d2, d3, d4, d5):
