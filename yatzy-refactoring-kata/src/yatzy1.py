@@ -43,43 +43,45 @@ class Yatzy:
         2. The method ".count()" to simplify an overly complex function.
         '''
         return dice.count(3) * 3
-
+    
+    @staticmethod
     def fours(*dice):
         '''
-        1. Removed the use of objects
+        1. Removed the use of objects.
         2. The function can receive multiple parameters.
         3. The method ".count()" to simplify an overly complex function.
         '''
         return dice.count(4) * 4
-
+    
+    @staticmethod
     def fives(*dice):
         '''
-        1. Removed the use of objects
+        1. Removed the use of objects.
         2. The function can receive multiple parameters.
         3. The method ".count()" to simplify an overly complex function.
         '''
         return dice.count(5) * 5
-
+    
+    @staticmethod
     def sixes(*dice):
         '''
-        1. Removed the use of objects
+        1. Removed the use of objects.
         2. The function can receive multiple parameters.
         3. The method ".count()" to simplify an overly complex function.
         '''
         return dice.count(6) * 6
-
-    def score_pair(self, d1, d2, d3, d4, d5):
-        counts = [0] * 6
-        counts[d1 - 1] += 1
-        counts[d2 - 1] += 1
-        counts[d3 - 1] += 1
-        counts[d4 - 1] += 1
-        counts[d5 - 1] += 1
-        at = 0
-        for at in range(6):
-            if (counts[6 - at - 1] == 2):
-                return (6 - at) * 2
-        return 0
+    
+    @staticmethod
+    def one_pair(*dice):
+        '''
+        1. Removed the use of objects.
+        2. The function can receive multiple parameters.
+        3. The variable result is used as an intermediate variable.
+        4. First we filter the pairs, then with max() we get the highest pair.
+        5. Renamed the function name to align it with the test.
+        '''
+        result = max(list(filter(lambda x: dice.count(x) >= 2, dice)) , default=0) * 2
+        return result
 
     @staticmethod
     def two_pair(d1, d2, d3, d4, d5):
