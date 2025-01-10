@@ -1,3 +1,5 @@
+from src.pips import Pips
+
 class Yatzy:
 
     ZERO = 0
@@ -26,7 +28,8 @@ class Yatzy:
         1. The function can receive multiple parameters.
         2. The method ".count()" to simplify an overly complex function.
         '''
-        return dice.count(1)
+        ONE = Pips.ONE.value
+        return dice.count(ONE)
 
     @staticmethod
     def twos(*dice):
@@ -34,7 +37,8 @@ class Yatzy:
         1. The function can receive multiple parameters.
         2. The method ".count()" to simplify an overly complex function.
         '''
-        return dice.count(2) * 2
+        TWO = Pips.TWO.value
+        return dice.count(TWO) * TWO
 
     @staticmethod
     def threes(*dice):
@@ -42,7 +46,8 @@ class Yatzy:
         1. The function can receive multiple parameters.
         2. The method ".count()" to simplify an overly complex function.
         '''
-        return dice.count(3) * 3
+        THREE = Pips.THREE.value
+        return dice.count(THREE) * THREE
     
     @staticmethod
     def fours(*dice):
@@ -51,7 +56,8 @@ class Yatzy:
         2. The function can receive multiple parameters.
         3. The method ".count()" to simplify an overly complex function.
         '''
-        return dice.count(4) * 4
+        FOUR = Pips.FOUR.value
+        return dice.count(FOUR) * FOUR
     
     @staticmethod
     def fives(*dice):
@@ -60,7 +66,8 @@ class Yatzy:
         2. The function can receive multiple parameters.
         3. The method ".count()" to simplify an overly complex function.
         '''
-        return dice.count(5) * 5
+        FIVE = Pips.FIVE.value
+        return dice.count(FIVE) * FIVE
     
     @staticmethod
     def sixes(*dice):
@@ -69,7 +76,8 @@ class Yatzy:
         2. The function can receive multiple parameters.
         3. The method ".count()" to simplify an overly complex function.
         '''
-        return dice.count(6) * 6
+        SIX = Pips.SIX.value
+        return dice.count(SIX) * SIX
     
     @staticmethod
     def one_pair(*dice):
