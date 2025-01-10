@@ -1,7 +1,7 @@
 from enum import Enum, unique
 
 @unique
-class Pips():
+class Pips(Enum):
     
     ONE = 1
     TWO = 2
