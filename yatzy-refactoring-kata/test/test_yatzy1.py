@@ -141,9 +141,9 @@ def test_large_straight():
     1. Renamed the name of the test.
     2. Renamed the tests.
     '''
-    assert 20 == Yatzy.largeStraight(6, 2, 3, 4, 5)
-    assert 20 == Yatzy.largeStraight(2, 3, 4, 5, 6)
-    assert 0 == Yatzy.largeStraight(1, 2, 2, 4, 5)
+    assert 20 == Yatzy.large_straight(6, 2, 3, 4, 5)
+    assert 20 == Yatzy.large_straight(2, 3, 4, 5, 6)
+    assert 0 == Yatzy.large_straight(1, 2, 2, 4, 5)
 
 
 def test_fullHouse():
