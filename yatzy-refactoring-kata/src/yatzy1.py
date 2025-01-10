@@ -135,20 +135,13 @@ class Yatzy:
         return 15 if sorted(dice) == [Pips.ONE.value,Pips.TWO.value,Pips.THREE.value,Pips.FOUR.value,Pips.FIVE.value] else Yatzy.ZERO
 
     @staticmethod
-    def largeStraight(d1, d2, d3, d4, d5):
-        tallies = [0] * 6
-        tallies[d1 - 1] += 1
-        tallies[d2 - 1] += 1
-        tallies[d3 - 1] += 1
-        tallies[d4 - 1] += 1
-        tallies[d5 - 1] += 1
-        if (tallies[1] == 1 and
-                tallies[2] == 1 and
-                tallies[3] == 1 and
-                tallies[4] == 1
-                and tallies[5] == 1):
-            return 20
-        return 0
+    def large_straight(*dice):
+        '''
+        1. Removed the use of objects.
+        2. The function can receive multiple parameters.
+        '''
+        return 20 if sorted(dice) == [Pips.TWO.value,Pips.THREE.value,Pips.FOUR.value,Pips.FIVE.value,Pips.SIX.value] else Yatzy.ZERO
+
 
     @staticmethod
     def fullHouse(d1, d2, d3, d4, d5):
