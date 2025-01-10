@@ -145,6 +145,7 @@ class Yatzy:
 
     @staticmethod
     def full_house(*dice):
+        '''
         dice_copy = set(dice)
         if len(dice_copy) == 2:
             result = 0
@@ -152,3 +153,6 @@ class Yatzy:
                 result += dice.count(value) * value
             return result
         return Yatzy.ZERO
+        '''
+        dice_copy = set(dice)
+        return sum(dice) if len(dice_copy) == 2 else Yatzy.ZERO
