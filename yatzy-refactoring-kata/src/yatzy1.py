@@ -127,20 +127,12 @@ class Yatzy:
 
 
     @staticmethod
-    def smallStraight(d1, d2, d3, d4, d5):
-        tallies = [0] * 6
-        tallies[d1 - 1] += 1
-        tallies[d2 - 1] += 1
-        tallies[d3 - 1] += 1
-        tallies[d4 - 1] += 1
-        tallies[d5 - 1] += 1
-        if (tallies[0] == 1 and
-                tallies[1] == 1 and
-                tallies[2] == 1 and
-                tallies[3] == 1 and
-                tallies[4] == 1):
-            return 15
-        return 0
+    def small_straight(*dice):
+        '''
+        1. Removed the use of objects.
+        2. The function can receive multiple parameters.
+        '''
+        return 15 if sorted(dice) == [Pips.ONE.value,Pips.TWO.value,Pips.THREE.value,Pips.FOUR.value,Pips.FIVE.value] else Yatzy.ZERO
 
     @staticmethod
     def largeStraight(d1, d2, d3, d4, d5):
