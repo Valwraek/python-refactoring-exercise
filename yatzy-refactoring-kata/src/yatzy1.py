@@ -93,29 +93,37 @@ class Yatzy:
 
     @staticmethod
     def two_pair(*dice):
-        
+        '''
+        1. Removed the use of objects.
+        2. The function can receive multiple parameters.
+        3. The variable result is used as an intermediate variable.
+        4. First we filter the pairs, then with sum() we get the expected values.
+        '''
         result = list(filter(lambda x: dice.count(x) >= 2, dice))
         return sum(list(set(result)) * 2) if len(result) >=4 else Yatzy.ZERO
 
     @staticmethod
     def three_of_a_kind(*dice):
-        
+        '''
+        1. Removed the use of objects.
+        2. The function can receive multiple parameters.
+        3. The variable result is used as an intermediate variable.
+        4. First we filter the pairs, then with sum() we get the expected values.
+        '''
         result = list(filter(lambda x: dice.count(x) >= 3, dice))
         return sum(list(set(result)) * 3) if len(result) >=3 else Yatzy.ZERO
 
     
     @staticmethod
-    def four_of_a_kind(_1, _2, d3, d4, d5):
-        tallies = [0] * 6
-        tallies[_1 - 1] += 1
-        tallies[_2 - 1] += 1
-        tallies[d3 - 1] += 1
-        tallies[d4 - 1] += 1
-        tallies[d5 - 1] += 1
-        for i in range(6):
-            if (tallies[i] >= 4):
-                return (i + 1) * 4
-        return 0
+    def four_of_a_kind(*dice):
+        '''
+        1. Removed the use of objects.
+        2. The function can receive multiple parameters.
+        3. The variable result is used as an intermediate variable.
+        4. First we filter the pairs, then with sum() we get the expected values.
+        '''
+        result = list(filter(lambda x: dice.count(x) >= 4, dice))
+        return sum(list(set(result)) * 4) if len(result) >=4 else Yatzy.ZERO
 
 
     @staticmethod
