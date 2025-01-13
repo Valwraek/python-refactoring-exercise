@@ -153,3 +153,5 @@ def test_full_house():
     '''
     assert 18 == Yatzy.full_house(6, 2, 2, 2, 6)
     assert 0 == Yatzy.full_house(2, 3, 4, 5, 6)
+    assert 0 == Yatzy.full_house(2, 2, 2, 2, 6)
+    
