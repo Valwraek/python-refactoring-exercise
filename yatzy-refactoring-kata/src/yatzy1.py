@@ -88,8 +88,7 @@ class Yatzy:
         4. First we filter the pairs, then with max() we get the highest pair.
         5. Renamed the function name to align it with the test.
         '''
-        result = max(list(filter(lambda x: dice.count(x) >= 2, dice)) , default=0) * 2
-        return result
+        return max(list(filter(lambda x: dice.count(x) >= 2, dice)) , default=0) * 2
 
     @staticmethod
     def two_pair(*dice):
