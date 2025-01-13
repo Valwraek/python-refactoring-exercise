@@ -154,5 +154,4 @@ class Yatzy:
             return result
         return Yatzy.ZERO
         '''
-        dice_copy = set(dice)
-        return sum(dice) if len(dice_copy) == 2 else Yatzy.ZERO
+        return sum(dice) if len(set(dice)) == 2 and dice.count(dice[0]) in [2, 3] else Yatzy.ZERO
