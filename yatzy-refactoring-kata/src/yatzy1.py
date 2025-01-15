@@ -1,8 +1,13 @@
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from src.pips import Pips
 
 class Yatzy:
 
     ZERO = 0
+    FIFTEEN = 15
+    TWENTY = 20
     FIFTY = 50
     
     @staticmethod
@@ -110,7 +115,7 @@ class Yatzy:
         4. First we filter the pairs, then with sum() we get the expected values.
         '''
         result = list(filter(lambda x: dice.count(x) >= 3, dice))
-        return sum(list(set(result)) * 3) if len(result) >=3 else Yatzy.ZERO
+        return sum(result[:3]) if len(result) >=3 else Yatzy.ZERO
 
     
     @staticmethod
@@ -122,7 +127,7 @@ class Yatzy:
         4. First we filter the pairs, then with sum() we get the expected values.
         '''
         result = list(filter(lambda x: dice.count(x) >= 4, dice))
-        return sum(list(set(result)) * 4) if len(result) >=4 else Yatzy.ZERO
+        return sum(result[:4]) if len(result) >=4 else Yatzy.ZERO
 
 
     @staticmethod
@@ -131,7 +136,10 @@ class Yatzy:
         1. Removed the use of objects.
         2. The function can receive multiple parameters.
         '''
-        return 15 if sorted(dice) == [Pips.ONE.value,Pips.TWO.value,Pips.THREE.value,Pips.FOUR.value,Pips.FIVE.value] else Yatzy.ZERO
+        '''
+        return 15 if len(set(sorted(dice))) == 5 and not set(sorted(dice)) > set([list(Pips.values())[5]]) else Yatzy.ZERO
+        '''
+        return Yatzy.FIFTEEN if set(dice) | {Pips.SIX.value} == Pips.values() else Yatzy.ZERO
 
     @staticmethod
     def large_straight(*dice):
@@ -139,7 +147,9 @@ class Yatzy:
         1. Removed the use of objects.
         2. The function can receive multiple parameters.
         '''
-        return 20 if sorted(dice) == [Pips.TWO.value,Pips.THREE.value,Pips.FOUR.value,Pips.FIVE.value,Pips.SIX.value] else Yatzy.ZERO
+        '''return 20 if len(set(sorted(dice))) == 5 and not set(sorted(dice)) > set([list(Pips.values())[0]]) else Yatzy.ZERO
+        '''
+        return Yatzy.TWENTY if set(dice) | {Pips.ONE.value} == Pips.values() else Yatzy.ZERO
 
 
     @staticmethod
