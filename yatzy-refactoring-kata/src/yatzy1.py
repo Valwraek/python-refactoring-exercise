@@ -152,8 +152,8 @@ class Yatzy:
         return Yatzy.TWENTY if set(dice) | {Pips.ONE.value} == Pips.values() else Yatzy.ZERO
 
 
-    @staticmethod
-    def full_house(*dice):
+    @classmethod
+    def full_house(cls, *dice):
         '''
         dice_copy = set(dice)
         if len(dice_copy) == 2:
@@ -163,4 +163,4 @@ class Yatzy:
             return result
         return Yatzy.ZERO
         '''
-        return sum(dice) if len(set(dice)) == 2 and dice.count(dice[0]) in [2, 3] else Yatzy.ZERO
+        return cls.chance(*dice) if len(set(dice)) == 2 and dice.count(dice[0]) in [2, 3] else Yatzy.ZERO
